@@ -1,0 +1,17 @@
+.order-detail-container{
+    padding-top: 60px;
+    margin: 0% 1%;
+}
+.order-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.order-detail-label{
+    width: 140px;
+}
+.detail-table{
+    ::ng-deep .table-results-base{
+        min-height: auto !important;
+    }
+}

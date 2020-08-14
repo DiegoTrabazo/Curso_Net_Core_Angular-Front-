@@ -1,0 +1,47 @@
+.label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
+  .switch{
+    width: 100%;
+  }
+  .switch-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .switcher{
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  .mode-select-button{
+      position: relative;
+      min-width: 35px;
+      padding: 0px;
+  }

@@ -1,0 +1,22 @@
+<div class="switch">
+    <div class="switch-header">
+        <div class="switcher">
+            <button class="mode-select-button" mat-button color="primary" id="tableMode" (click)="isCardViewVisible = false;" [ngClass]="{'mode-selected':!isCardViewVisible}" 
+                matTooltip="Table" matTooltipPosition="above" arial-label="Table">
+                <mat-icon>view_list</mat-icon>
+            </button>
+            <button class="mode-select-button" mat-button color="primary" id="cardMode" (click)="isCardViewVisible = true;" [ngClass]="{'mode-selected':isCardViewVisible}" 
+                matTooltip="Card" matTooltipPosition="above" arial-label="Card">
+                <mat-icon>view_module</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div>
+        <div *ngIf="!isCardViewVisible" [@leftToRightAnimation]="!isCardViewVisible">
+            <ng-container *ngTemplateOutlet="templates.get(getTableKey()); context: {$implicit: item}"></ng-container>
+        </div>
+        <div *ngIf="isCardViewVisible" [@rightToLeftAnimation]="isCardViewVisible">
+            <ng-container *ngTemplateOutlet="templates.get(getCardKey()); context: {$implicit: item}"></ng-container>
+        </div>
+    </div>
+</div>  
