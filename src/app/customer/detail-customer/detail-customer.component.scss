@@ -1,3 +1,5 @@
+@import "../../shared/responsive-breackpoints.scss";
+
 .label-description {
     width: 110px;
     margin-bottom: 0px;
@@ -6,7 +8,15 @@
 .element-form {
     display: flex;
     align-items: center;
-    @media (max-width: 767){
+    @include respond-to(xs-screen) {
+        flex-direction: column;
+        align-items: baseline;
+    }
+    @include respond-to(sm-screen) {
+        flex-direction: column;
+        align-items: baseline;
+    }
+    @include respond-to(md-screen) {
         flex-direction: column;
         align-items: baseline;
     }

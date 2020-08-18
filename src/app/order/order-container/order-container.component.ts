@@ -22,6 +22,7 @@ export class OrderContainerComponent implements OnInit, AfterViewInit {
   pageSizeOptions: number[] = [10, 20, 30];
   pageSize: number = 10;
   pageIndex: number = 0;
+  isVisible: boolean = false;
 
   constructor(private ref: ChangeDetectorRef, private service: OrderContainerService) { 
     
@@ -38,11 +39,13 @@ export class OrderContainerComponent implements OnInit, AfterViewInit {
   }
   
   getOrders(page: number, rows: number): void {
+    this.isVisible = true;
     this.service.getOrderList(page, rows)
       .subscribe(
         response => {
           this.items = response;
           this.numberOfRecords = response[0].totalRecords;
+          this.isVisible = false;
       });
   }
 

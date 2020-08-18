@@ -12,8 +12,8 @@ import { WhiteSpaceValidator } from '../shared/validators/whiteSpaceValidator';
 export class LoginComponent implements OnInit {
 
   loginError = '';
-
   loginForm: FormGroup;
+  isVisible: boolean = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
   
@@ -30,10 +30,11 @@ export class LoginComponent implements OnInit {
   }
 
   login(submittedForm: FormGroup) {
-    
+    this.isVisible = true;
     this.authService.login(submittedForm.value.email, submittedForm.value.password)
       .subscribe(authResponse => { 
-        this.router.navigate(['/home']) 
+        this.isVisible = false;
+        this.router.navigate(['/home']); 
       }, error => this.loginError = error);
   }
 }
